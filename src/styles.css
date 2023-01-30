@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'actor';
+  src: url('assets/Actor-Regular.ttf');
+}
+
+* {
+  -o-transition-property: none !important;
+  -moz-transition-property: none !important;
+  -ms-transition-property: none !important;
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+}
+
+.clr-accordion-inner-content {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.clr-accordion-header > button {
+  color: #dea623;
+  background-color: #36342f !important;
+}
+
+
+.clr-accordion-inner-content {
+  color: #dea623;
+  background-color: #36342f !important;
+}
+
+.clr-accordion-header, .clr-accordion-content {
+  border-style: none !important;
+}

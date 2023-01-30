@@ -1,0 +1,65 @@
+<div style="padding: 1rem;">
+  <div class="alert alert-warning" role="alert">
+    <div class="alert-items">
+      <div class="alert-item static">
+        <div class="alert-icon-wrapper">
+          <cds-icon class="alert-icon" shape="exclamation-circle"></cds-icon>
+        </div>
+        <span class="alert-text">Degraded mode</span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <clr-accordion>
+    <clr-accordion-panel *ngFor="let room of rooms.keys()">
+      <clr-accordion-title>{{room}}
+      </clr-accordion-title>
+      <clr-accordion-content *clrIfExpanded style="font-size: 0.5rem;">
+        <table style="margin-left: 2rem">
+          <tr>
+            <td>
+              <b>Room</b>
+            </td>
+            <td>
+              <div class="btn-group btn-primary btn-icon">
+                <button class="btn" aria-label="Check" (click)="offRoom(rooms.get(room))">
+                  <cds-icon shape="ban"></cds-icon>
+                </button>
+                <button class="btn" aria-label="home" (click)="dimRoom(rooms.get(room))">
+                  <cds-icon shape="moon"></cds-icon>
+                </button>
+                <button class="btn" aria-label="user" (click)="onRoom(rooms.get(room))">
+                  <cds-icon shape="sun"></cds-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr *ngFor="let light of rooms.get(room)">
+            <td style="width:50%">
+              <a role="tooltip" aria-haspopup="true" class="tooltip tooltip-lg">
+                {{light.name}}
+                <span class="tooltip-content">
+                LIDX: {{light.idx}}
+                  <br>LT: {{light.topic}}
+              </span>
+              </a>
+            </td>
+            <td>
+              <div class="btn-group btn-primary btn-icon">
+                <button class="btn" aria-label="Check" (click)="off(light)">
+                  <cds-icon shape="ban"></cds-icon>
+                </button>
+                <button class="btn" aria-label="home" (click)="dim(light)">
+                  <cds-icon shape="moon"></cds-icon>
+                </button>
+                <button class="btn" aria-label="user" (click)="on(light)">
+                  <cds-icon shape="sun"></cds-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </clr-accordion-content>
+    </clr-accordion-panel>
+  </clr-accordion>
+</div>
